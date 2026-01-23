@@ -3,7 +3,7 @@
  Problem: 04
  Topic: Revisiting C Language
  Description: Write a C function to calculate LCM of two numbers (TSRS)
- Date: 10-01-2025
+ Date: 10-01-2026
 */
 #include<stdio.h>
 int main()

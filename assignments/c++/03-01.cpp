@@ -3,7 +3,7 @@
  Problem: 01
  Topic: Basics of C++
  Description: Write a C++ program to calculate average of 3 numbers.
- Date: 12-01-2025
+ Date: 12-01-2026
 */
 #include<iostream>
 int main()

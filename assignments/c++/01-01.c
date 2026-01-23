@@ -3,7 +3,7 @@
  Problem: 01
  Topic: Revisiting C Language
  Description: Write a C program to check weather a given number is even or odd.
- Date: 10-01-2025
+ Date: 10-01-2026
 */
 #include<stdio.h>
 int main()

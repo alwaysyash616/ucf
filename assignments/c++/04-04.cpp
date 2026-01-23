@@ -3,7 +3,7 @@
  Problem: 04
  Topic: Functions in C++
  Description: Define a C++ function to print Pascal Traingle up to N lines.
- Date: 13-01-2025
+ Date: 13-01-2026
 */
 #include<iostream>
 #include<cmath>

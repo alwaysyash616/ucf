@@ -3,7 +3,7 @@
  Problem: 02
  Topic: Basics of C++
  Description: Write a C++ program to print Hello on the first line and MySirG on the second line using endl.
- Date: 12-01-2025
+ Date: 12-01-2026
 */
 #include<iostream>
 int main()

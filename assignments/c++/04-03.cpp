@@ -3,7 +3,7 @@
  Problem: 03
  Topic: Functions in C++
  Description: Define a C++ function to calculate x raised to the power y.
- Date: 13-01-2025
+ Date: 13-01-2026
 */
 #include<iostream>
 using namespace std;

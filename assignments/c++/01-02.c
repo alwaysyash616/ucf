@@ -3,7 +3,7 @@
  Problem: 02
  Topic: Revisiting C Language
  Description: Write a C program to calculate factorial of a number.
- Date: 10-01-2025
+ Date: 10-01-2026
 */
 #include<stdio.h>
 int main()

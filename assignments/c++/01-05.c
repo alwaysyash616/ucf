@@ -3,7 +3,7 @@
  Problem: 05
  Topic: Revisiting C Language
  Description: Write a C function to check wheather a given number is a Prime number or not. (TSRS)
- Date: 10-01-2025
+ Date: 10-01-2026
 */
 #include<stdio.h>
 int main()
