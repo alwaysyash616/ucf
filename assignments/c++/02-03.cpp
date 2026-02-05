@@ -10,7 +10,7 @@ int main()
 {
     using namespace std;
     int x,y;
-    cout<<"Enter a number";
+    cout<<"Enter two numbers";
     cout<<endl;
     cin>>x>>y;
     cout<<"Sum of "<<x<<" and "<<y<<" is "<<x+y;

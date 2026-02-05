@@ -14,6 +14,41 @@
  =====================
  Date: 14-12-2025
 */
+
+#include<stdio.h>
+int main()
+{
+    int marks;
+    printf("Enter Marks\n");
+    scanf("%d",&marks);
+    switch(marks)
+    {
+    	case 90 ... 100:
+	        printf("Grade A\n");
+            break;
+        case 80 ... 89:
+            printf("Grade B\n");
+            break;
+        case 70 ... 79:
+            printf("Grade C\n");
+            break;
+        case 60 ... 69:
+            printf("Grade D\n");
+            break;
+        case 50 ... 59:	
+            printf("Grade E\n");
+            break;
+        case 1 ... 49:
+            printf("Grade F\n");
+            break;
+        default:
+            printf("Invalid Input\n");
+    }
+    return 0;
+}
+
+
+/*
 #include<stdio.h>
 int main()
 {
@@ -36,3 +71,4 @@ int main()
         printf("Grade F\n");
     return 0;
 }
+*/
