@@ -10,7 +10,8 @@ using namespace std;
 int main()
 {
     int x,y;
-    int exp(int,int);
+    // int exp(int,int);
+    int exp(int&,int&);
     cout<<"Enter base: ";
     cin>>x;
     cout<<"Enter exponenet: ";
@@ -20,6 +21,15 @@ int main()
     return 0;
 }
 
+int exp(int &a,int &b)
+{
+    int x=a;
+    for(;b>1;b--)
+        x*=a;
+    return x;
+}
+
+/*
 int exp(int a,int b)
 {
     int x=a;
@@ -27,3 +37,4 @@ int exp(int a,int b)
         x*=a;
     return x;
 }
+*/

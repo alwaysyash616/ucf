@@ -10,7 +10,8 @@ using namespace std;
 int main()
 {
     int a,b;
-    void primes(int,int);
+    // void primes(int,int);
+    void primes(int&,int&);
     cout<<"Enter two numbers"<<endl;
     cin>>a>>b;
     primes(a,b);
@@ -18,6 +19,24 @@ int main()
     return 0;
 }
 
+void primes(int &x,int &y)
+{
+    int i;
+    for(;x<y;x++)
+    {
+        i=2;
+        while(i<x)
+        {
+            if(x%i==0)
+                break;
+            i++;
+        }
+        if(i==x)
+            cout<<x<<" ";
+    }
+}
+
+/*
 void primes(int x,int y)
 {
     int i;
@@ -34,3 +53,4 @@ void primes(int x,int y)
             cout<<x<<" ";
     }
 }
+*/

@@ -10,7 +10,8 @@ using namespace std;
 int main()
 {
     int x;
-    int digit(int);
+    // int digit(int);
+    int digit(int&);
     cout<<"Enter a number: ";
     cin>>x;
     cout<<"highest digit: "<<digit(x);
@@ -18,6 +19,20 @@ int main()
     return 0;
 }
 
+int digit(int &a)
+{
+    int s=0;
+    if(a==0)
+        return 0;
+    for(;a>0;a/=10)
+    {
+        if(a%10>s)
+            s=a%10;
+    }
+    return s;
+}
+
+/*
 int digit(int a)
 {
     int s=0;
@@ -30,3 +45,4 @@ int digit(int a)
     }
     return s;
 }
+*/
