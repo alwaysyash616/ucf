@@ -97,7 +97,7 @@ int main()
     cout<<endl;
     return 0;
 }
-*/
+
 #include<iostream>
 using namespace std;
 inline int add(int,int);
@@ -112,4 +112,65 @@ int main()
 int add(int a,int b)
 {
     return a+b;
+}
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+struct Book
+{
+    private:
+        int bookid;
+        char title[20];
+        float price;
+    public:
+    void showBook()
+    {
+        cout<<endl<<bookid<<" "<<title<<" "<<price;
+    }
+    void setBook(int id,char t[],float p)
+    {
+        bookid=id;
+        strcpy(title,t);
+        price=p;
+    }
+};
+int main()
+{
+    Book b1;
+    // b1.bookid=-2;
+    b1.setBook(1,"Java",345.0);
+    b1.showBook();
+    return 0;
+}
+*/
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Book
+{
+    private:
+        int bookid;
+        char title[20];
+        float price;
+    public:
+    void showBook()
+    {
+        cout<<endl<<bookid<<" "<<title<<" "<<price;
+    }
+    void setBook(int id,char t[],float p)
+    {
+        bookid=id;
+        strcpy(title,t);
+        price=p;
+    }
+};
+int main()
+{
+    Book b1;
+    // b1.bookid=-2;
+    b1.setBook(1,"Java",345.0);
+    b1.showBook();
+    return 0;
 }
