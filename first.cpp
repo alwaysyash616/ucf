@@ -143,7 +143,6 @@ int main()
     b1.showBook();
     return 0;
 }
-*/
 
 #include<iostream>
 #include<string.h>
@@ -172,5 +171,194 @@ int main()
     // b1.bookid=-2;
     b1.setBook(1,"Java",345.0);
     b1.showBook();
+    return 0;
+}
+
+static local variable are created at the starting of program and resides in memory till the program ends.
+
+#include<iostream>
+using namespace std;
+
+void f1()
+{
+    int x=0; //local variable
+    static int y; //static local variable
+    x++;
+    y++;
+    cout<<"x="<<x<<"y="<<y<<endl;
+}
+int main()
+{
+    f1();
+    f1();
+    f1();
+    cout<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+class Test
+{
+    public:
+        int a,b; //Instance Member Variables
+        static int k; //Static Member Variable | class variable
+
+};
+int Test::k;
+void f1()
+{
+    Test t1,t2; //t1: {a,b}, t1: {a,b}
+    t1.a=5; //t1: {a=5,b}, t1: {a,b}
+    cout<<t2.a<<endl; //garbage value
+    t1.k=10;
+    cout<<t2.k;
+}
+void f2()
+{
+    Test::k=10;
+    cout<<Test::k;
+}
+int main()
+{
+    // f1();
+    f2();
+    cout<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+class Test
+{
+    private:
+        int a,b; //Instance Member Variables
+        static int k; //Static Member Variable | class variable
+    public:
+        void set_a(int x) {a=x;}
+        void set_b(int y) {b=y;}
+        void show_a() {cout<<"a="<<a<<endl;}
+        void show_b() {cout<<"b="<<b<<endl;}
+        static void set_k(int z) {k=z;}
+        static void show_k() {cout<<"k="<<k<<endl;}
+};
+int Test::k;
+void f1()
+{
+    Test t1,t2; //t1: {a,b}, t1: {a,b} Test: k=0
+    t1.set_a(5); //t1: {a=5,b}, t1: {a,b} Test: k=0
+    t2.show_a();
+    t1.set_k(10); //t1: {a=5,b}, t1: {a,b} Test: k=10
+    t2.show_k();
+}
+void f2()
+{
+    Test::set_k(10); //t1: {a=5,b}, t1: {a,b} Test: k=10
+    Test::show_k();
+}
+int main()
+{
+    f1();
+    cout<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+
+class Complex
+{
+    private:
+        int a,b;
+    public:
+        void setData(int,int);
+        void showData();
+        Complex add(Complex);
+        Complex subtract(Complex);
+        Complex multiply(Complex);
+};
+Complex Complex::add(Complex c)
+{
+    Complex temp;
+    temp.a=a+c.a;
+    temp.b=b+c.b;
+    return temp;
+}
+Complex Complex::subtract(Complex c)
+{
+    Complex temp;
+    temp.a=a-c.a;
+    temp.b=b-c.b;
+    return temp;
+}
+Complex Complex::multiply(Complex c)
+{
+    Complex temp;
+    temp.a=a*c.a-b*c.b;
+    temp.b=a*c.b+b*c.a;
+    return temp;
+}
+void Complex::setData(int x,int y)
+{
+    a=x;
+    b=y;
+}
+void Complex::showData()
+{
+    cout<<"a="<<a<<" b="<<b<<endl;
+}
+int main()
+{
+    Complex c1,c2,c3;
+    c1.setData(2,3);
+    c2.setData(2,-3);
+    c1.showData();
+    c2.showData();
+    c3=c1.add(c2);
+    c3.showData();
+    c3=c1.subtract(c2);
+    c3.showData();
+    c3=c1.multiply(c2);
+    c3.showData();
+    return 0;
+}
+*/
+#include<iostream>
+using namespace std;
+class Complex
+{
+    private:
+        int a,b;
+    public:
+        // Complex() {} // Empty body & Non Parameterised | Compiler only defines this if you did't defined any constructor yourself.
+        Complex()
+        {
+            a=0; b=0;
+        }
+        Complex(int x)
+        {
+            a=x; b=0;
+        }
+        Complex(int x,int y)
+        {
+            a=x; b=y;
+        }
+        void setData(int x,int y)
+        {
+            a=x; b=y;
+        }
+        void showData()
+        {
+            cout<<"a="<<a<<" b="<<b<<endl;
+        }
+};
+int main()
+{
+    Complex c1,c2(5,6),c3(6);
+    c1.setData(3,4);
+    c1.showData();
+    c2.showData();
+    c3.showData();
+    cout<<endl;
     return 0;
 }
