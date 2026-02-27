@@ -322,7 +322,7 @@ int main()
     c3.showData();
     return 0;
 }
-*/
+
 #include<iostream>
 using namespace std;
 class Complex
@@ -343,6 +343,12 @@ class Complex
         {
             a=x; b=y;
         }
+        // Complex(Complex &C)
+        // {
+        //     a=C.a;
+        //     b=C.b;
+        // }
+        // If we nedd to define copy constructor, this is how it should look like.
         void setData(int x,int y)
         {
             a=x; b=y;
@@ -354,11 +360,132 @@ class Complex
 };
 int main()
 {
-    Complex c1,c2(5,6),c3(6);
+    Complex c1,c2(5),c3(2,5);
+    Complex c4=c3;
     c1.setData(3,4);
     c1.showData();
     c2.showData();
     c3.showData();
+    cout<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+// Example 1
+class A
+{
+    private:
+        int a,b,c;
+    public:
+        // A(int x,int y,int z)
+        // {
+        //     a=x;
+        //     b=y;
+        //     c=z;
+        // }
+        // A(int a,int b,int c):a(a),b(b),c(c)
+        // {
+        //     // 
+        // }
+        A(int x,int y,int z):a(x),b(y),c(z)
+        {
+            // 
+        }
+        void show()
+        {
+            cout<<a<<" "<<b<<" "<<c<<endl;
+        }
+};
+int main()
+{
+    // A obj(1,2,3);
+    A obj={1,2,3};
+    obj.show();
+    cout<<endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+// Example 2
+class A
+{
+    private:
+        int a,b,c;
+        const int k=10;
+    public:
+        // A(int x,int y,int z)
+        // {
+        //     a=x;
+        //     b=y;
+        //     c=z;
+        // }
+        // A(int a,int b,int c):a(a),b(b),c(c)
+        // {
+        //     // 
+        // }
+        A(int x,int y,int z):a(x),b(y),c(z),k(4)
+        {
+            
+        }
+        void show()
+        {
+            cout<<a<<" "<<b<<" "<<c<<endl;
+        }
+        void showk()
+        {
+            cout<<"k="<<k<<endl;
+        }
+};
+int main()
+{
+    // A obj(1,2,3);
+    A obj={1,2,3};
+    obj.show();
+    obj.showk();
+    cout<<endl;
+    return 0;
+}
+*/
+#include<iostream>
+using namespace std;
+// Example 3
+class A
+{
+    private:
+        int a,b,c;
+        int &k=a;
+    public:
+        // A(int x,int y,int z)
+        // {
+        //     a=x;
+        //     b=y;
+        //     c=z;
+        // }
+        // A(int a,int b,int c):a(a),b(b),c(c)
+        // {
+        //     // 
+        // }
+        A(int x,int y,int z):a(x),b(y),c(z),k(b)
+        {
+            
+        }
+        void show()
+        {
+            cout<<a<<" "<<b<<" "<<c<<endl;
+        }
+        void showk()
+        {
+            cout<<"k="<<k<<endl;
+        }
+};
+int main()
+{
+    // A obj(1,2,3);
+    A obj={1,2,3};
+    obj.show();
+    obj.showk();
     cout<<endl;
     return 0;
 }
