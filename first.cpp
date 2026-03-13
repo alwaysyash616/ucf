@@ -527,4 +527,80 @@ int main()
     cout<<endl;
     return 0;
 }
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+class Person
+{
+    private:
+        int age;
+        char name[20];
+    protected:
+        void setName(char n[]) { strcpy(name,n);}
+        void setAge(int a) { age=a;}
+    public:
+        char* getName() { return name;}
+        int getAge() { return age;}
+
+};
+class Student: public Person
+{
+    private:
+        int rollno;
+    protected:
+        void setRollno(int r) { rollno=r;}
+    public:
+        int getRollno() { return rollno;}
+        void setStudent(int r,char n[],int a)
+        {
+            rollno=r;
+            setName(n);
+            setAge(a);
+        }
+        void showStudent()
+        {
+            cout<<rollno<<" ";
+            cout<<getName()<<" ";
+            cout<<getAge()<<" "<<endl;
+        }
+};
+int main()
+{
+    // Person p1;
+    // p1.getName();
+    Student s1;
+    s1.setStudent(100,"Arjun",24);
+    s1.showStudent();
+    // cout<<sizeof(s1);
+    cout<<endl;
+    return 0;
+}
 */
+#include<iostream>
+using namespace std;
+class A
+{
+    private:
+        int a1,a2;
+    public:
+        A()
+        {
+            cout<<"A-Constructor"<<endl;
+        }
+};
+class B: public A
+{
+    private:
+        int b1,b2;
+    public:
+        B():A()
+        {
+            cout<<"B-Constructor"<<endl;
+        }
+};
+int main()
+{
+    B obj;
+    return 0;
+}
