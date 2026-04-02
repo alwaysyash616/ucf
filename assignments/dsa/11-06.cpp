@@ -58,7 +58,8 @@ class Queue
                     front=temp->next;
                 delete temp;
             }
-            throw "Queue Underflow";
+            else
+                throw "Queue Underflow";
         }
 };
 int main()
