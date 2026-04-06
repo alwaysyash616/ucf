@@ -7,7 +7,18 @@
 */
 #include<iostream>
 using namespace std;
-
+class node
+{
+    public:
+        node *left;
+        int item;
+        node *right;
+};
+class BST
+{
+    private:
+        node *root;
+};
 int main()
 {
 
