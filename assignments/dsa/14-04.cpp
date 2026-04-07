@@ -68,6 +68,19 @@ class BST
             else
                 root=temp;
         }
+        void preorder()
+        {
+            preOrder(root);
+        }
+        void preOrder(node *p)
+        {
+            if(p)
+            {
+                cout<<p->item<<" ";
+                preOrder(p->left);
+                preOrder(p->right);
+            }
+        }
 };
 int main()
 {
