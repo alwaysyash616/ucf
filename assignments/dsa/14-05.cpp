@@ -81,16 +81,6 @@ class BST
                 preOrder(p->right);
             }
         }
-        void inorder()
-        {
-            inOrder(root);
-        }
-        void inOrder(node *p)
-        {
-            inOrder(p->left);
-            cout<<p->item<<" ";
-            inOrder(p->right);
-        }
 };
 int main()
 {
