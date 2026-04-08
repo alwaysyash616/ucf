@@ -7,24 +7,24 @@
 */
 #include<iostream>
 using namespace std;
-void printOddNumbers(int);
+void printOddNumbersReverse(int);
 int main()
 {
     int x;
     cout<<"Enter a number: ";
     cin>>x;
-    printOddNumbers(x);
+    printOddNumbersReverse(x);
     cout<<endl;
     return 0;
 }
-void printOddNumbers(int n)
+void printOddNumbersReverse(int n)
 {
     if(n<1)
         throw "Invalid Input";
     if(n>1)
     {
         cout<<2*n<<" ";
-        printOddNumbers(n-1);
+        printOddNumbersReverse(n-1);
     }
     else
         cout<<2*n;
