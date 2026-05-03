@@ -9,7 +9,15 @@
 using namespace std;
 class Heap
 {
-    
+    private:
+        int capacity,size,*arr;
+    public:
+        Heap(int cap)
+        {
+            capacity=cap;
+            size=0;
+            arr=new int[capacity];
+        }
 };
 int main()
 {
