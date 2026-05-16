@@ -25,6 +25,8 @@ bool isBalanced(char str[])
 {
     stack <char> temp;
     int l=strlen(str);
+    if(l==0)
+        return true;
     temp.push(str[0]);
     for(int i=1;i<l;i++)
     {
